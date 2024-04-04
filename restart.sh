@@ -1,6 +1,7 @@
 #/bin/bash
 
-if [[ $1 =~ ^[0-9]+$ ]]; then
+if [[ $1 =~ ^[0-9]+$ ]]
+then
    timer=$1
    echo = "restarting server in $timer minutes"
 else
