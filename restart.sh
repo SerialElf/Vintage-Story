@@ -30,8 +30,10 @@ done
 announce "Server will reboot in 60 seconds, please log off if able. Get to safety otherwise."
 echo "one minute warning sent nya~"
 sleep 50
+
 announce "Saving uwu"
 screen -S vintagestory_server -p 0 -X stuff "/autosavenow^M"
+
 echo "starting loop"
 i=10
 while [ $i -ge 0 ]
@@ -41,8 +43,18 @@ do
 	i=$(( i - 1 ))
 	sleep 1
 done
+
 announce "Restarting server now have a nice day nya~^M"
 screen -S vintagestory_server -p 0 -X stuff "/stop^M"
+
 echo "server stopped waited then restarting"
 sleep 10
 ~/server.sh start
+
+sleep 5
+if  screen -r | grep -Fq "vintage"
+then
+        echo "server back online"
+else
+        echo "unknown error, server not detected"
+fi
