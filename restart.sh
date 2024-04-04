@@ -1,10 +1,10 @@
 #/bin/bash
 
 if [[ $1 =~ ^[0-9]+$ ]]; then
-   timer = $1
+   timer=$1
    echo = "restarting server in $timer minutes"
 else
-   timer = 5
+   timer=5
    echo "no valid number supplied. Restarting server in 5 minutes"
 fi
 
@@ -37,7 +37,7 @@ while [ $i -ge 0 ]
 do
 	echo "warning $i"
 	screen -S vintagestory_server -p 0 -X stuff "/announce server will reboot in "$i" seconds.^M"
-	i = $(( i - 1 ))
+	i=$(( i - 1 ))
 	sleep 1
 done
 announce "Restarting server now have a nice day nya~^M"
