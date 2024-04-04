@@ -22,7 +22,7 @@ do
 	unset $1
 	announce "server is rebooting in $timer minutes please get to safety"
 	echo "$timer minute warning sent nya~"
-	timer = $(( timer - 1))
+	timer=$(( timer - 1))
 	sleep 60
 done
 
